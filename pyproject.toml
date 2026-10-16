@@ -1,6 +1,6 @@
 [project]
 name = "callendar-vendemiary"
-version = "0.1.1"
+version = "0.1.2"
 description = "Translates dates between the French Republican calendar and the Gregorian system."
 requires-python = ">=3.10"
 dependencies = []
