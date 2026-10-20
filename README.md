@@ -47,3 +47,10 @@ A Republican year has 12 months of exactly 30 days each, plus 5 complementary "s
 - `Sansculottide` — frozen dataclass with `year`, `index` (1–6), and a `name` property.
 
 Dates before 1792-09-22 raise `ValueError`. Roman-numeral year rendering is available via `callendar_vendemiary.core.roman(n)`.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
